@@ -1,0 +1,16 @@
+hosts = ["gpu-01.local", "gpu-02.local", "192.168.1.50"]
+
+[ports]
+include = [8000, 11434]
+ranges = ["30000-30100"]
+
+[scan]
+scheme = "auto"
+connect_timeout_ms = 250
+request_timeout_ms = 1000
+concurrency = 256
+tls_skip_verify = false
+
+[gateway]
+listen = "127.0.0.1:8080"
+aggregate_models = true
